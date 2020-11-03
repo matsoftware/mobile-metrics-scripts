@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "taxi_NW.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

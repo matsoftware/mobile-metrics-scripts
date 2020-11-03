@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "wheelDark_NW.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

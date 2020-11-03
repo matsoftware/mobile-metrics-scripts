@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "wheelDefault_SW.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

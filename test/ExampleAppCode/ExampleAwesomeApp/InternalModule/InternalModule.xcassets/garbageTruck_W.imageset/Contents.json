@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "garbageTruck_W.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

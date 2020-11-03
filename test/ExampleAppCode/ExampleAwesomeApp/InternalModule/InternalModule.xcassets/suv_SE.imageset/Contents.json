@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "suv_SE.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

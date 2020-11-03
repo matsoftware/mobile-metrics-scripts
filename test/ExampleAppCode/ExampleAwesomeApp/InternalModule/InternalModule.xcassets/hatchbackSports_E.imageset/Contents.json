@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "hatchbackSports_E.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
