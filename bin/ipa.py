@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
-from typing import List,Dict
+from typing import List,Dict,Optional
 from functools import reduce
-from files_list import FileList
 from pathlib import Path
+from argparse import ArgumentParser
 import logging
 import operator
 import re
@@ -35,6 +35,8 @@ def toMB(size_in_bytes: int) -> float:
 
 def formattedSize(size_in_mb: float) -> str:
     return f'{size_in_mb:.1f}'
+
+# Types
 
 class CompressedFile(object):
     def __init__(self, uncompressed_file_size: int, file_size: int, file_compression: float, file_name: str):
@@ -76,7 +78,6 @@ class Collection(object):
             "Relative uncompressed size": f'{formattedSize(self.size.relative_uncompressed_size)}%'
         }
 
-
 class Size(object):
     def __init__(self, compressed_size_in_mb: float, total_archive_compressed_size_in_mb: float, uncompressed_size_in_mb: float, total_archive_uncompressed_size_in_mb: float):
         
@@ -107,6 +108,21 @@ class Size(object):
         Relative uncompressed size: {formattedSize(self.relative_uncompressed_size)}%
         """
 
+class FileList(object):
+    @staticmethod
+    def read_input_file_lists(internal_input_file_list: Path) -> List[str]:
+        with open(internal_input_file_list, 'r') as input_list:
+            return [v for v in [FileList.parse_input(f) for f in input_list.readlines()] if v]
+
+    @staticmethod
+    def parse_input(value: str) -> Optional[str]:
+        result = value.strip()
+        if (result.startswith('#')):
+            return None
+        return result.replace('$(BUILT_PRODUCTS_DIR)/', '').replace('.framework','')
+
+
+# IPA Report
     
 class IPA(object):
     def __init__(self, ipa_path: Path, internal_input_file_list: Path):
@@ -115,7 +131,7 @@ class IPA(object):
         self.name = ipa_path.name
         self.assets_car = {}
         self.executable = {}
-        self.entity_bundle = {}
+        self.main_bundle = {}
         self.files_ext = {}
         self.__analyze(ipa_path, self.__read_compressed_files__(ipa_path), FileList.read_input_file_lists(internal_input_file_list))
 
@@ -135,8 +151,8 @@ class IPA(object):
         return list(self.executable.keys())[0]
 
     @property
-    def entity_bundle_name(self) -> str:
-        return list(self.entity_bundle.keys())[0]
+    def main_bundle_name(self) -> str:
+        return list(self.main_bundle.keys())[0]
 
     @property
     def executable_size(self) -> 'Size':
@@ -147,8 +163,8 @@ class IPA(object):
         return self.assets_car['Assets.car'].size
 
     @property
-    def entity_bundle_size(self) -> 'Size':
-        return self.entity_bundle[self.entity_bundle_name].size
+    def main_bundle_size(self) -> 'Size':
+        return self.main_bundle[self.main_bundle_name].size
 
     def file_ext_size(self, ext: str) -> 'Size':
         if ext in self.files_ext:
@@ -206,7 +222,7 @@ class IPA(object):
             (frameworks, framework_name_pattern), # Framework
             (self.assets_car, assets_car_pattern), # Root Assets.car
             (self.executable, executable_pattern), # Main executable
-            (self.entity_bundle, main_bundle_pattern), # Main executable
+            (self.main_bundle, main_bundle_pattern), # Main bundle
         ] + [(self.files_ext, file_extension_pattern(ext[0])) for ext in file_extensions_to_analyze]
 
         for compressed_file in compressed_files:
@@ -252,3 +268,38 @@ class IPA(object):
 
     def __collections_size(self, collections: List['Collection']) -> 'Size':
         return reduce(lambda x, y: x+y, [f.size for f in collections])
+
+# MAIN
+
+def main():
+    CLI = ArgumentParser(description='Analysis of the ')
+    CLI.add_argument(
+        '--ipa-path',
+        metavar='A',
+        type=str,
+        required=True,
+        help='The path to the IPA file'
+    )
+    CLI.add_argument(
+        '--internal-frameworks-input-file-list',
+        metavar='I',
+        type=str,
+        required=True,
+        help='The path to xcfilelist file containing the list of names of libraries considered internal to the project.'
+    )
+
+    
+    args = CLI.parse_args()
+    ipa_path = Path(args.ipa_path)
+    internal_frameworks_input_file_list = Path(args.internal_frameworks_input_file_list)
+
+    logging.basicConfig(level=logging.DEBUG)
+
+    logging.debug('Start IPA size analysis ...')
+
+    ipa_report = IPA(ipa_path=ipa_path, internal_input_file_list=internal_frameworks_input_file_list)
+
+    logging.debug('IPA size analysis terminated.')
+
+if __name__ == '__main__':
+    main()
