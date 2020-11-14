@@ -1,0 +1,18 @@
+platform :ios, '14.2'
+use_frameworks!
+
+def shared_pods
+  pod 'Alamofire', '~> 5.2'
+end
+
+target 'CarbonIntensityUKDemo' do
+  shared_pods
+end
+
+target 'CarbonIntensity' do
+  shared_pods
+end
+
+target 'DataProvider' do
+  shared_pods
+end

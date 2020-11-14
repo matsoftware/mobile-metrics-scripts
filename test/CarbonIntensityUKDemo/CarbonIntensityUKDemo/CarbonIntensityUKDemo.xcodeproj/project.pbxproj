@@ -3,16 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE6273C36B1B6447FABAD843 /* Pods_DataProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63C534BB2F38B48152EE046 /* Pods_DataProvider.framework */; };
+		D23F4A3707BCF1C83DE8F75D /* Pods_CarbonIntensity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB40DE9D568934AFE3167954 /* Pods_CarbonIntensity.framework */; };
+		DD7763699C19C845193C9A25 /* Pods_CarbonIntensityUKDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E8079016A772C4807191D4 /* Pods_CarbonIntensityUKDemo.framework */; };
 		E599C04125508D7B00991054 /* DataProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E599C03A25508D7B00991054 /* DataProvider.framework */; };
 		E599C04225508D7B00991054 /* DataProvider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E599C03A25508D7B00991054 /* DataProvider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E599C04925508D8A00991054 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E599C04825508D8A00991054 /* Assets.swift */; };
 		E599C04C25508DB000991054 /* DataProvider.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E599C04B25508DB000991054 /* DataProvider.xcassets */; };
 		E599C05025508F7900991054 /* DataProvider.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E599C04B25508DB000991054 /* DataProvider.xcassets */; };
-		E59A0A65256029D70041835C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E59A0A64256029D70041835C /* Alamofire */; };
 		E5ABFA3325333714008326B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ABFA3225333714008326B2 /* AppDelegate.swift */; };
 		E5ABFA3525333714008326B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ABFA3425333714008326B2 /* SceneDelegate.swift */; };
 		E5ABFA3925333716008326B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5ABFA3825333716008326B2 /* Assets.xcassets */; };
@@ -66,6 +68,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		177A50CE083AFDA03EBEEE56 /* Pods-CarbonIntensityUKDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarbonIntensityUKDemo.debug.xcconfig"; path = "Target Support Files/Pods-CarbonIntensityUKDemo/Pods-CarbonIntensityUKDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		2BB62BD1ADCB73FE13AFCAF9 /* Pods-DataProvider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProvider.debug.xcconfig"; path = "Target Support Files/Pods-DataProvider/Pods-DataProvider.debug.xcconfig"; sourceTree = "<group>"; };
+		32E3970788256B04A77863FF /* Pods-CarbonIntensityUKDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarbonIntensityUKDemo.release.xcconfig"; path = "Target Support Files/Pods-CarbonIntensityUKDemo/Pods-CarbonIntensityUKDemo.release.xcconfig"; sourceTree = "<group>"; };
+		8E99D813421FD1A0E86FECB8 /* Pods-DataProvider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProvider.release.xcconfig"; path = "Target Support Files/Pods-DataProvider/Pods-DataProvider.release.xcconfig"; sourceTree = "<group>"; };
+		93B15316BD64D97255BF713D /* Pods-CarbonIntensity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarbonIntensity.debug.xcconfig"; path = "Target Support Files/Pods-CarbonIntensity/Pods-CarbonIntensity.debug.xcconfig"; sourceTree = "<group>"; };
+		C63C534BB2F38B48152EE046 /* Pods_DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D38AE3A35817A68640A1219D /* Pods-CarbonIntensity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarbonIntensity.release.xcconfig"; path = "Target Support Files/Pods-CarbonIntensity/Pods-CarbonIntensity.release.xcconfig"; sourceTree = "<group>"; };
 		E58971C9256000D000343FB3 /* Deployment.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Deployment.xcconfig; sourceTree = "<group>"; };
 		E599C03A25508D7B00991054 /* DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E599C03D25508D7B00991054 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +93,8 @@
 		E5C652B925601C45007684B5 /* CarbonIntensityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonIntensityViewModel.swift; sourceTree = "<group>"; };
 		E5C652BD25601C79007684B5 /* CarbonIntensityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonIntensityService.swift; sourceTree = "<group>"; };
 		E5C652C325601D9B007684B5 /* CarbonIntensity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonIntensity.swift; sourceTree = "<group>"; };
+		F8E8079016A772C4807191D4 /* Pods_CarbonIntensityUKDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarbonIntensityUKDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB40DE9D568934AFE3167954 /* Pods_CarbonIntensity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarbonIntensity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E59A0A65256029D70041835C /* Alamofire in Frameworks */,
+				BE6273C36B1B6447FABAD843 /* Pods_DataProvider.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +112,7 @@
 			files = (
 				E599C04125508D7B00991054 /* DataProvider.framework in Frameworks */,
 				E5C652A6256015E8007684B5 /* CarbonIntensity.framework in Frameworks */,
+				DD7763699C19C845193C9A25 /* Pods_CarbonIntensityUKDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,12 +120,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D23F4A3707BCF1C83DE8F75D /* Pods_CarbonIntensity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C8A4BE2784BCF0B4B7F2E2C7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2BB62BD1ADCB73FE13AFCAF9 /* Pods-DataProvider.debug.xcconfig */,
+				8E99D813421FD1A0E86FECB8 /* Pods-DataProvider.release.xcconfig */,
+				177A50CE083AFDA03EBEEE56 /* Pods-CarbonIntensityUKDemo.debug.xcconfig */,
+				32E3970788256B04A77863FF /* Pods-CarbonIntensityUKDemo.release.xcconfig */,
+				93B15316BD64D97255BF713D /* Pods-CarbonIntensity.debug.xcconfig */,
+				D38AE3A35817A68640A1219D /* Pods-CarbonIntensity.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E58971C8256000B800343FB3 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +168,7 @@
 				E5C65292256015E8007684B5 /* CarbonIntensity */,
 				E5ABFA3025333714008326B2 /* Products */,
 				E5C652CB25602104007684B5 /* Frameworks */,
+				C8A4BE2784BCF0B4B7F2E2C7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,6 +217,9 @@
 		E5C652CB25602104007684B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C63C534BB2F38B48152EE046 /* Pods_DataProvider.framework */,
+				F8E8079016A772C4807191D4 /* Pods_CarbonIntensityUKDemo.framework */,
+				FB40DE9D568934AFE3167954 /* Pods_CarbonIntensity.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -218,6 +248,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E599C04325508D7B00991054 /* Build configuration list for PBXNativeTarget "DataProvider" */;
 			buildPhases = (
+				606A1D7CB2E597BD4A4C89AB /* [CP] Check Pods Manifest.lock */,
 				E599C03525508D7B00991054 /* Headers */,
 				E599C03625508D7B00991054 /* Sources */,
 				E599C03725508D7B00991054 /* Frameworks */,
@@ -226,12 +257,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				E5C652D52560215E007684B5 /* PBXTargetDependency */,
 			);
 			name = DataProvider;
-			packageProductDependencies = (
-				E59A0A64256029D70041835C /* Alamofire */,
-			);
 			productName = InternalModule;
 			productReference = E599C03A25508D7B00991054 /* DataProvider.framework */;
 			productType = "com.apple.product-type.framework";
@@ -240,10 +267,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5ABFA4325333716008326B2 /* Build configuration list for PBXNativeTarget "CarbonIntensityUKDemo" */;
 			buildPhases = (
+				F73869902CB5E5AE5F5BFAB2 /* [CP] Check Pods Manifest.lock */,
 				E5ABFA2B25333714008326B2 /* Sources */,
 				E5ABFA2C25333714008326B2 /* Frameworks */,
 				E5ABFA2D25333714008326B2 /* Resources */,
 				E599C04625508D7B00991054 /* Embed Frameworks */,
+				C70709D6FE44358C44F1B40A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,8 +281,6 @@
 				E5C652A5256015E8007684B5 /* PBXTargetDependency */,
 			);
 			name = CarbonIntensityUKDemo;
-			packageProductDependencies = (
-			);
 			productName = ExampleAwesomeApp;
 			productReference = E5ABFA2F25333714008326B2 /* CarbonIntensityUKDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -262,6 +289,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5C652A8256015E8007684B5 /* Build configuration list for PBXNativeTarget "CarbonIntensity" */;
 			buildPhases = (
+				17516FFB9A9C98AABFB9C1D7 /* [CP] Check Pods Manifest.lock */,
 				E5C6528C256015E8007684B5 /* Headers */,
 				E5C6528D256015E8007684B5 /* Sources */,
 				E5C6528E256015E8007684B5 /* Frameworks */,
@@ -308,9 +336,6 @@
 				Base,
 			);
 			mainGroup = E5ABFA2625333714008326B2;
-			packageReferences = (
-				E58971C1255FFBFD00343FB3 /* XCRemoteSwiftPackageReference "Alamofire" */,
-			);
 			productRefGroup = E5ABFA3025333714008326B2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -350,6 +375,92 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17516FFB9A9C98AABFB9C1D7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CarbonIntensity-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		606A1D7CB2E597BD4A4C89AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DataProvider-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C70709D6FE44358C44F1B40A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CarbonIntensityUKDemo/Pods-CarbonIntensityUKDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CarbonIntensityUKDemo/Pods-CarbonIntensityUKDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CarbonIntensityUKDemo/Pods-CarbonIntensityUKDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F73869902CB5E5AE5F5BFAB2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CarbonIntensityUKDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E599C03625508D7B00991054 /* Sources */ = {
@@ -393,10 +504,6 @@
 			target = E5C65290256015E8007684B5 /* CarbonIntensity */;
 			targetProxy = E5C652A4256015E8007684B5 /* PBXContainerItemProxy */;
 		};
-		E5C652D52560215E007684B5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = E5C652D42560215E007684B5 /* Alamofire */;
-		};
 		E5C652DB25602175007684B5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E599C03925508D7B00991054 /* DataProvider */;
@@ -418,12 +525,11 @@
 /* Begin XCBuildConfiguration section */
 		E599C04425508D7B00991054 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BB62BD1ADCB73FE13AFCAF9 /* Pods-DataProvider.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = P9KU2Z4WRE;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -448,12 +554,11 @@
 		};
 		E599C04525508D7B00991054 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E99D813421FD1A0E86FECB8 /* Pods-DataProvider.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = P9KU2Z4WRE;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -595,8 +700,8 @@
 		};
 		E5ABFA4425333716008326B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 177A50CE083AFDA03EBEEE56 /* Pods-CarbonIntensityUKDemo.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -616,8 +721,8 @@
 		};
 		E5ABFA4525333716008326B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32E3970788256B04A77863FF /* Pods-CarbonIntensityUKDemo.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -637,6 +742,7 @@
 		};
 		E5C652A9256015E8007684B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93B15316BD64D97255BF713D /* Pods-CarbonIntensity.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -665,6 +771,7 @@
 		};
 		E5C652AA256015E8007684B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D38AE3A35817A68640A1219D /* Pods-CarbonIntensity.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -730,30 +837,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		E58971C1255FFBFD00343FB3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.4.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		E59A0A64256029D70041835C /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E58971C1255FFBFD00343FB3 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		E5C652D42560215E007684B5 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E58971C1255FFBFD00343FB3 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E5ABFA2725333714008326B2 /* Project object */;
 }
