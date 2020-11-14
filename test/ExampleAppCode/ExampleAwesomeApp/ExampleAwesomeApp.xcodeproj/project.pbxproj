@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E599C03E25508D7B00991054 /* InternalModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E599C03C25508D7B00991054 /* InternalModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E599C04125508D7B00991054 /* InternalModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E599C03A25508D7B00991054 /* InternalModule.framework */; };
-		E599C04225508D7B00991054 /* InternalModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E599C03A25508D7B00991054 /* InternalModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E58971C3255FFBFD00343FB3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E58971C2255FFBFD00343FB3 /* Alamofire */; };
+		E599C04125508D7B00991054 /* DataProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E599C03A25508D7B00991054 /* DataProvider.framework */; };
+		E599C04225508D7B00991054 /* DataProvider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E599C03A25508D7B00991054 /* DataProvider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E599C04925508D8A00991054 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E599C04825508D8A00991054 /* Assets.swift */; };
 		E599C04C25508DB000991054 /* InternalModule.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E599C04B25508DB000991054 /* InternalModule.xcassets */; };
 		E599C05025508F7900991054 /* InternalModule.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E599C04B25508DB000991054 /* InternalModule.xcassets */; };
@@ -38,7 +38,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E599C04225508D7B00991054 /* InternalModule.framework in Embed Frameworks */,
+				E599C04225508D7B00991054 /* DataProvider.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,8 +46,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E599C03A25508D7B00991054 /* InternalModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InternalModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E599C03C25508D7B00991054 /* InternalModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InternalModule.h; sourceTree = "<group>"; };
+		E58971C9256000D000343FB3 /* Deployment.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Deployment.xcconfig; sourceTree = "<group>"; };
+		E599C03A25508D7B00991054 /* DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E599C03D25508D7B00991054 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E599C04825508D8A00991054 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		E599C04B25508DB000991054 /* InternalModule.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = InternalModule.xcassets; sourceTree = "<group>"; };
@@ -73,29 +73,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E599C04125508D7B00991054 /* InternalModule.framework in Frameworks */,
+				E599C04125508D7B00991054 /* DataProvider.framework in Frameworks */,
+				E58971C3255FFBFD00343FB3 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E599C03B25508D7B00991054 /* InternalModule */ = {
+		E58971C8256000B800343FB3 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				E599C03C25508D7B00991054 /* InternalModule.h */,
+				E58971C9256000D000343FB3 /* Deployment.xcconfig */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		E599C03B25508D7B00991054 /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
 				E599C04825508D8A00991054 /* Assets.swift */,
 				E599C04B25508DB000991054 /* InternalModule.xcassets */,
 				E599C03D25508D7B00991054 /* Info.plist */,
 			);
-			path = InternalModule;
+			path = DataProvider;
 			sourceTree = "<group>";
 		};
 		E5ABFA2625333714008326B2 = {
 			isa = PBXGroup;
 			children = (
 				E5ABFA3125333714008326B2 /* ExampleAwesomeApp */,
-				E599C03B25508D7B00991054 /* InternalModule */,
+				E599C03B25508D7B00991054 /* DataProvider */,
 				E5ABFA3025333714008326B2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,7 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				E5ABFA2F25333714008326B2 /* ExampleAwesomeApp.app */,
-				E599C03A25508D7B00991054 /* InternalModule.framework */,
+				E599C03A25508D7B00991054 /* DataProvider.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,6 +120,7 @@
 		E5ABFA3125333714008326B2 /* ExampleAwesomeApp */ = {
 			isa = PBXGroup;
 			children = (
+				E58971C8256000B800343FB3 /* Configuration */,
 				E5ABFA3225333714008326B2 /* AppDelegate.swift */,
 				E5ABFA3425333714008326B2 /* SceneDelegate.swift */,
 				E5ABFA3625333714008326B2 /* ContentView.swift */,
@@ -138,16 +147,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E599C03E25508D7B00991054 /* InternalModule.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		E599C03925508D7B00991054 /* InternalModule */ = {
+		E599C03925508D7B00991054 /* DataProvider */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E599C04325508D7B00991054 /* Build configuration list for PBXNativeTarget "InternalModule" */;
+			buildConfigurationList = E599C04325508D7B00991054 /* Build configuration list for PBXNativeTarget "DataProvider" */;
 			buildPhases = (
 				E599C03525508D7B00991054 /* Headers */,
 				E599C03625508D7B00991054 /* Sources */,
@@ -158,9 +166,9 @@
 			);
 			dependencies = (
 			);
-			name = InternalModule;
+			name = DataProvider;
 			productName = InternalModule;
-			productReference = E599C03A25508D7B00991054 /* InternalModule.framework */;
+			productReference = E599C03A25508D7B00991054 /* DataProvider.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		E5ABFA2E25333714008326B2 /* ExampleAwesomeApp */ = {
@@ -178,6 +186,9 @@
 				E599C04025508D7B00991054 /* PBXTargetDependency */,
 			);
 			name = ExampleAwesomeApp;
+			packageProductDependencies = (
+				E58971C2255FFBFD00343FB3 /* Alamofire */,
+			);
 			productName = ExampleAwesomeApp;
 			productReference = E5ABFA2F25333714008326B2 /* ExampleAwesomeApp.app */;
 			productType = "com.apple.product-type.application";
@@ -209,12 +220,15 @@
 				Base,
 			);
 			mainGroup = E5ABFA2625333714008326B2;
+			packageReferences = (
+				E58971C1255FFBFD00343FB3 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = E5ABFA3025333714008326B2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				E5ABFA2E25333714008326B2 /* ExampleAwesomeApp */,
-				E599C03925508D7B00991054 /* InternalModule */,
+				E599C03925508D7B00991054 /* DataProvider */,
 			);
 		};
 /* End PBXProject section */
@@ -265,7 +279,7 @@
 /* Begin PBXTargetDependency section */
 		E599C04025508D7B00991054 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E599C03925508D7B00991054 /* InternalModule */;
+			target = E599C03925508D7B00991054 /* DataProvider */;
 			targetProxy = E599C03F25508D7B00991054 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -293,7 +307,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = InternalModule/Info.plist;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -301,7 +315,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = uk.example.InternalModule;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.example.DataProvider;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -323,7 +337,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = InternalModule/Info.plist;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -331,7 +345,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = uk.example.InternalModule;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.example.DataProvider;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -343,6 +357,7 @@
 		};
 		E5ABFA4125333716008326B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E58971C9256000D000343FB3 /* Deployment.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -404,6 +419,7 @@
 		};
 		E5ABFA4225333716008326B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E58971C9256000D000343FB3 /* Deployment.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -502,7 +518,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E599C04325508D7B00991054 /* Build configuration list for PBXNativeTarget "InternalModule" */ = {
+		E599C04325508D7B00991054 /* Build configuration list for PBXNativeTarget "DataProvider" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E599C04425508D7B00991054 /* Debug */,
@@ -530,6 +546,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E58971C1255FFBFD00343FB3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E58971C2255FFBFD00343FB3 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E58971C1255FFBFD00343FB3 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E5ABFA2725333714008326B2 /* Project object */;
 }

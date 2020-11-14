@@ -1,0 +1,12 @@
+//
+//  Deployment.xcconfig
+//  ExampleAwesomeApp
+//
+//  Created by Mattia Campolese on 14/11/2020.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// Replace with your team
+DEVELOPMENT_TEAM = 
