@@ -11,8 +11,10 @@
             "program": "${workspaceFolder}/bin/ipa.py",
             "console": "integratedTerminal",
             "args": [
-                "--ipa-path", "./test/ExampleAwesomeApp.ipa",
-                "--internal-frameworks-input-file-list", "./test/ExampleInternalFrameworks.xcfilelist"
+                "--ipa-path", 
+                "./test/CarbonIntensityUKDemo.ipa",
+                "--external-frameworks-input-file-list", 
+                "test/CarbonIntensityUKDemo/CarbonIntensityUKDemo/Pods/Target Support Files/Pods-CarbonIntensityUKDemo/Pods-CarbonIntensityUKDemo-frameworks-Debug-input-files.xcfilelist"
             ]
         }
     ]

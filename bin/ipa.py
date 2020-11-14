@@ -116,16 +116,23 @@ class FileList(object):
 
     @staticmethod
     def parse_input(value: str) -> Optional[str]:
+        r_format = r"(\w*).framework$"
         result = value.strip()
         if (result.startswith('#')):
             return None
-        return result.replace('$(BUILT_PRODUCTS_DIR)/', '').replace('.framework','')
-
+        if (not result.endswith('.framework')):
+            return None
+        pattern = re.compile(r_format)
+        match_pattern = pattern.search(result)
+        if match_pattern:
+            return match_pattern.group(1)
+        else:
+            return None
 
 # IPA Report
     
 class IPA(object):
-    def __init__(self, ipa_path: Path, internal_input_file_list: Path):
+    def __init__(self, ipa_path: Path, external_input_file_list: Path):
         self.size = 0
         self.uncompressed_size = 0
         self.name = ipa_path.name
@@ -133,7 +140,7 @@ class IPA(object):
         self.executable = {}
         self.main_bundle = {}
         self.files_ext = {}
-        self.__analyze(ipa_path, self.__read_compressed_files__(ipa_path), FileList.read_input_file_lists(internal_input_file_list))
+        self.__analyze(ipa_path, self.__read_compressed_files__(ipa_path), FileList.read_input_file_lists(external_input_file_list))
 
     # Properties
     # Stored: size, name
@@ -207,7 +214,7 @@ class IPA(object):
             file_name=f[7]
         ) for f in raw_compressed_files[0:-2] if f[0] != "0"] + [ total_size ]
 
-    def __analyze(self, ipa_path: Path, compressed_files: List['CompressedFile'], internal_framework_names: List[str]) -> List['Framework']:
+    def __analyze(self, ipa_path: Path, compressed_files: List['CompressedFile'], external_framework_names: List[str]) -> List['Framework']:
         logging.debug(f'{ipa_path}')
         frameworks = {}
 
@@ -235,7 +242,7 @@ class IPA(object):
                     total_archive_uncompressed_size=self.uncompressed_size
                 )
             
-        self.__classify_frameworks(frameworks, internal_framework_names)
+        self.__classify_frameworks(frameworks, external_framework_names)
 
     @staticmethod
     def __classify(group: Dict[str, 'Collection'], regex_pattern: str, compressed_file: 'CompressedFile', total_archive_size: float, total_archive_uncompressed_size: float):
@@ -251,14 +258,14 @@ class IPA(object):
                     ) 
                 group[match_name].files.append(compressed_file)
 
-    def __classify_frameworks(self, frameworks: Dict[str, 'Collection'], internal_framework_names: List[str]):
+    def __classify_frameworks(self, frameworks: Dict[str, 'Collection'], external_framework_names: List[str]):
         self.internal_frameworks = []
         self.external_frameworks = []
         for framework_name, collection in frameworks.items():
-            if framework_name in internal_framework_names:
-                self.internal_frameworks.append(collection)
-            else:
+            if framework_name in external_framework_names:
                 self.external_frameworks.append(collection)
+            else:
+                self.internal_frameworks.append(collection)
         IPA.__sort_collections(self.internal_frameworks)
         IPA.__sort_collections(self.external_frameworks)
 
@@ -281,23 +288,23 @@ def main():
         help='The path to the IPA file'
     )
     CLI.add_argument(
-        '--internal-frameworks-input-file-list',
-        metavar='I',
+        '--external-frameworks-input-file-list',
+        metavar='E',
         type=str,
         required=True,
-        help='The path to xcfilelist file containing the list of names of libraries considered internal to the project.'
+        help='The path to xcfilelist file containing the list of names of libraries considered external to the project.'
     )
 
     
     args = CLI.parse_args()
     ipa_path = Path(args.ipa_path)
-    internal_frameworks_input_file_list = Path(args.internal_frameworks_input_file_list)
+    external_frameworks_input_file_list = Path(args.external_frameworks_input_file_list)
 
     logging.basicConfig(level=logging.DEBUG)
 
     logging.debug('Start IPA size analysis ...')
 
-    ipa_report = IPA(ipa_path=ipa_path, internal_input_file_list=internal_frameworks_input_file_list)
+    ipa_report = IPA(ipa_path=ipa_path, external_input_file_list=external_frameworks_input_file_list)
 
     logging.debug('IPA size analysis terminated.')
 
