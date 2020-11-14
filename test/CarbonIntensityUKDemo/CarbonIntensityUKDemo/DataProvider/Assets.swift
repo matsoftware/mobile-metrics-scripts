@@ -10,5 +10,6 @@ import SwiftUI
 public struct Assets {
 
     public static var ambulance = Image("ambulance_E")
-
+    public static var carbon = Image("carbon")
+    
 }

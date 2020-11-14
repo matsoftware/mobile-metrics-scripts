@@ -7,18 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E58971C3255FFBFD00343FB3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E58971C2255FFBFD00343FB3 /* Alamofire */; };
 		E599C04125508D7B00991054 /* DataProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E599C03A25508D7B00991054 /* DataProvider.framework */; };
 		E599C04225508D7B00991054 /* DataProvider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E599C03A25508D7B00991054 /* DataProvider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E599C04925508D8A00991054 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E599C04825508D8A00991054 /* Assets.swift */; };
-		E599C04C25508DB000991054 /* InternalModule.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E599C04B25508DB000991054 /* InternalModule.xcassets */; };
-		E599C05025508F7900991054 /* InternalModule.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E599C04B25508DB000991054 /* InternalModule.xcassets */; };
+		E599C04C25508DB000991054 /* DataProvider.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E599C04B25508DB000991054 /* DataProvider.xcassets */; };
+		E599C05025508F7900991054 /* DataProvider.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E599C04B25508DB000991054 /* DataProvider.xcassets */; };
+		E59A0A65256029D70041835C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E59A0A64256029D70041835C /* Alamofire */; };
 		E5ABFA3325333714008326B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ABFA3225333714008326B2 /* AppDelegate.swift */; };
 		E5ABFA3525333714008326B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ABFA3425333714008326B2 /* SceneDelegate.swift */; };
-		E5ABFA3725333714008326B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ABFA3625333714008326B2 /* ContentView.swift */; };
 		E5ABFA3925333716008326B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5ABFA3825333716008326B2 /* Assets.xcassets */; };
 		E5ABFA3C25333716008326B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5ABFA3B25333716008326B2 /* Preview Assets.xcassets */; };
 		E5ABFA3F25333716008326B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5ABFA3D25333716008326B2 /* LaunchScreen.storyboard */; };
+		E5C652A6256015E8007684B5 /* CarbonIntensity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C65291256015E8007684B5 /* CarbonIntensity.framework */; };
+		E5C652A7256015E8007684B5 /* CarbonIntensity.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E5C65291256015E8007684B5 /* CarbonIntensity.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E5C652B425601616007684B5 /* CarbonIntensityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C652B325601616007684B5 /* CarbonIntensityView.swift */; };
+		E5C652BA25601C45007684B5 /* CarbonIntensityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C652B925601C45007684B5 /* CarbonIntensityViewModel.swift */; };
+		E5C652BE25601C79007684B5 /* CarbonIntensityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C652BD25601C79007684B5 /* CarbonIntensityService.swift */; };
+		E5C652C425601D9B007684B5 /* CarbonIntensity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C652C325601D9B007684B5 /* CarbonIntensity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +33,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = E599C03925508D7B00991054;
 			remoteInfo = InternalModule;
+		};
+		E5C652A4256015E8007684B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5ABFA2725333714008326B2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5C65290256015E8007684B5;
+			remoteInfo = CarbonIntensity;
+		};
+		E5C652DA25602175007684B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5ABFA2725333714008326B2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E599C03925508D7B00991054;
+			remoteInfo = DataProvider;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -39,6 +58,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				E599C04225508D7B00991054 /* DataProvider.framework in Embed Frameworks */,
+				E5C652A7256015E8007684B5 /* CarbonIntensity.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,15 +70,20 @@
 		E599C03A25508D7B00991054 /* DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E599C03D25508D7B00991054 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E599C04825508D8A00991054 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
-		E599C04B25508DB000991054 /* InternalModule.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = InternalModule.xcassets; sourceTree = "<group>"; };
-		E5ABFA2F25333714008326B2 /* ExampleAwesomeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleAwesomeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E599C04B25508DB000991054 /* DataProvider.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DataProvider.xcassets; sourceTree = "<group>"; };
+		E5ABFA2F25333714008326B2 /* CarbonIntensityUKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarbonIntensityUKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5ABFA3225333714008326B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5ABFA3425333714008326B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E5ABFA3625333714008326B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E5ABFA3825333716008326B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5ABFA3B25333716008326B2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E5ABFA3E25333716008326B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5ABFA4025333716008326B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5C65291256015E8007684B5 /* CarbonIntensity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CarbonIntensity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5C65294256015E8007684B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5C652B325601616007684B5 /* CarbonIntensityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonIntensityView.swift; sourceTree = "<group>"; };
+		E5C652B925601C45007684B5 /* CarbonIntensityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonIntensityViewModel.swift; sourceTree = "<group>"; };
+		E5C652BD25601C79007684B5 /* CarbonIntensityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonIntensityService.swift; sourceTree = "<group>"; };
+		E5C652C325601D9B007684B5 /* CarbonIntensity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonIntensity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E59A0A65256029D70041835C /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +100,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E599C04125508D7B00991054 /* DataProvider.framework in Frameworks */,
-				E58971C3255FFBFD00343FB3 /* Alamofire in Frameworks */,
+				E5C652A6256015E8007684B5 /* CarbonIntensity.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5C6528E256015E8007684B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				E599C04825508D8A00991054 /* Assets.swift */,
-				E599C04B25508DB000991054 /* InternalModule.xcassets */,
+				E5C652BD25601C79007684B5 /* CarbonIntensityService.swift */,
+				E5C652C325601D9B007684B5 /* CarbonIntensity.swift */,
+				E599C04B25508DB000991054 /* DataProvider.xcassets */,
 				E599C03D25508D7B00991054 /* Info.plist */,
 			);
 			path = DataProvider;
@@ -102,34 +137,36 @@
 		E5ABFA2625333714008326B2 = {
 			isa = PBXGroup;
 			children = (
-				E5ABFA3125333714008326B2 /* ExampleAwesomeApp */,
+				E5ABFA3125333714008326B2 /* CarbonIntensityUKDemo */,
 				E599C03B25508D7B00991054 /* DataProvider */,
+				E5C65292256015E8007684B5 /* CarbonIntensity */,
 				E5ABFA3025333714008326B2 /* Products */,
+				E5C652CB25602104007684B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		E5ABFA3025333714008326B2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E5ABFA2F25333714008326B2 /* ExampleAwesomeApp.app */,
+				E5ABFA2F25333714008326B2 /* CarbonIntensityUKDemo.app */,
 				E599C03A25508D7B00991054 /* DataProvider.framework */,
+				E5C65291256015E8007684B5 /* CarbonIntensity.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E5ABFA3125333714008326B2 /* ExampleAwesomeApp */ = {
+		E5ABFA3125333714008326B2 /* CarbonIntensityUKDemo */ = {
 			isa = PBXGroup;
 			children = (
 				E58971C8256000B800343FB3 /* Configuration */,
 				E5ABFA3225333714008326B2 /* AppDelegate.swift */,
 				E5ABFA3425333714008326B2 /* SceneDelegate.swift */,
-				E5ABFA3625333714008326B2 /* ContentView.swift */,
 				E5ABFA3825333716008326B2 /* Assets.xcassets */,
 				E5ABFA3D25333716008326B2 /* LaunchScreen.storyboard */,
 				E5ABFA4025333716008326B2 /* Info.plist */,
 				E5ABFA3A25333716008326B2 /* Preview Content */,
 			);
-			path = ExampleAwesomeApp;
+			path = CarbonIntensityUKDemo;
 			sourceTree = "<group>";
 		};
 		E5ABFA3A25333716008326B2 /* Preview Content */ = {
@@ -140,10 +177,34 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		E5C65292256015E8007684B5 /* CarbonIntensity */ = {
+			isa = PBXGroup;
+			children = (
+				E5C652B325601616007684B5 /* CarbonIntensityView.swift */,
+				E5C652B925601C45007684B5 /* CarbonIntensityViewModel.swift */,
+				E5C65294256015E8007684B5 /* Info.plist */,
+			);
+			path = CarbonIntensity;
+			sourceTree = "<group>";
+		};
+		E5C652CB25602104007684B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
 		E599C03525508D7B00991054 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5C6528C256015E8007684B5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -165,15 +226,19 @@
 			buildRules = (
 			);
 			dependencies = (
+				E5C652D52560215E007684B5 /* PBXTargetDependency */,
 			);
 			name = DataProvider;
+			packageProductDependencies = (
+				E59A0A64256029D70041835C /* Alamofire */,
+			);
 			productName = InternalModule;
 			productReference = E599C03A25508D7B00991054 /* DataProvider.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E5ABFA2E25333714008326B2 /* ExampleAwesomeApp */ = {
+		E5ABFA2E25333714008326B2 /* CarbonIntensityUKDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E5ABFA4325333716008326B2 /* Build configuration list for PBXNativeTarget "ExampleAwesomeApp" */;
+			buildConfigurationList = E5ABFA4325333716008326B2 /* Build configuration list for PBXNativeTarget "CarbonIntensityUKDemo" */;
 			buildPhases = (
 				E5ABFA2B25333714008326B2 /* Sources */,
 				E5ABFA2C25333714008326B2 /* Frameworks */,
@@ -184,14 +249,33 @@
 			);
 			dependencies = (
 				E599C04025508D7B00991054 /* PBXTargetDependency */,
+				E5C652A5256015E8007684B5 /* PBXTargetDependency */,
 			);
-			name = ExampleAwesomeApp;
+			name = CarbonIntensityUKDemo;
 			packageProductDependencies = (
-				E58971C2255FFBFD00343FB3 /* Alamofire */,
 			);
 			productName = ExampleAwesomeApp;
-			productReference = E5ABFA2F25333714008326B2 /* ExampleAwesomeApp.app */;
+			productReference = E5ABFA2F25333714008326B2 /* CarbonIntensityUKDemo.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E5C65290256015E8007684B5 /* CarbonIntensity */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5C652A8256015E8007684B5 /* Build configuration list for PBXNativeTarget "CarbonIntensity" */;
+			buildPhases = (
+				E5C6528C256015E8007684B5 /* Headers */,
+				E5C6528D256015E8007684B5 /* Sources */,
+				E5C6528E256015E8007684B5 /* Frameworks */,
+				E5C6528F256015E8007684B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5C652DB25602175007684B5 /* PBXTargetDependency */,
+			);
+			name = CarbonIntensity;
+			productName = CarbonIntensity;
+			productReference = E5C65291256015E8007684B5 /* CarbonIntensity.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -199,7 +283,7 @@
 		E5ABFA2725333714008326B2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					E599C03925508D7B00991054 = {
@@ -209,9 +293,13 @@
 					E5ABFA2E25333714008326B2 = {
 						CreatedOnToolsVersion = 12.0;
 					};
+					E5C65290256015E8007684B5 = {
+						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
+					};
 				};
 			};
-			buildConfigurationList = E5ABFA2A25333714008326B2 /* Build configuration list for PBXProject "ExampleAwesomeApp" */;
+			buildConfigurationList = E5ABFA2A25333714008326B2 /* Build configuration list for PBXProject "CarbonIntensityUKDemo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -227,8 +315,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E5ABFA2E25333714008326B2 /* ExampleAwesomeApp */,
+				E5ABFA2E25333714008326B2 /* CarbonIntensityUKDemo */,
 				E599C03925508D7B00991054 /* DataProvider */,
+				E5C65290256015E8007684B5 /* CarbonIntensity */,
 			);
 		};
 /* End PBXProject section */
@@ -238,7 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E599C04C25508DB000991054 /* InternalModule.xcassets in Resources */,
+				E599C04C25508DB000991054 /* DataProvider.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,10 +335,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E599C05025508F7900991054 /* InternalModule.xcassets in Resources */,
+				E599C05025508F7900991054 /* DataProvider.xcassets in Resources */,
 				E5ABFA3F25333716008326B2 /* LaunchScreen.storyboard in Resources */,
 				E5ABFA3C25333716008326B2 /* Preview Assets.xcassets in Resources */,
 				E5ABFA3925333716008326B2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5C6528F256015E8007684B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +357,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E599C04925508D8A00991054 /* Assets.swift in Sources */,
+				E5C652C425601D9B007684B5 /* CarbonIntensity.swift in Sources */,
+				E5C652BE25601C79007684B5 /* CarbonIntensityService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +368,15 @@
 			files = (
 				E5ABFA3325333714008326B2 /* AppDelegate.swift in Sources */,
 				E5ABFA3525333714008326B2 /* SceneDelegate.swift in Sources */,
-				E5ABFA3725333714008326B2 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5C6528D256015E8007684B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5C652B425601616007684B5 /* CarbonIntensityView.swift in Sources */,
+				E5C652BA25601C45007684B5 /* CarbonIntensityViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +387,20 @@
 			isa = PBXTargetDependency;
 			target = E599C03925508D7B00991054 /* DataProvider */;
 			targetProxy = E599C03F25508D7B00991054 /* PBXContainerItemProxy */;
+		};
+		E5C652A5256015E8007684B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E5C65290256015E8007684B5 /* CarbonIntensity */;
+			targetProxy = E5C652A4256015E8007684B5 /* PBXContainerItemProxy */;
+		};
+		E5C652D52560215E007684B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = E5C652D42560215E007684B5 /* Alamofire */;
+		};
+		E5C652DB25602175007684B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E599C03925508D7B00991054 /* DataProvider */;
+			targetProxy = E5C652DA25602175007684B5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -480,14 +600,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"ExampleAwesomeApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CarbonIntensityUKDemo/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ExampleAwesomeApp/Info.plist;
+				INFOPLIST_FILE = CarbonIntensityUKDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = uk.example.ExampleAwesomeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.example.CarbonIntensityUKDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -501,17 +621,72 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"ExampleAwesomeApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CarbonIntensityUKDemo/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ExampleAwesomeApp/Info.plist;
+				INFOPLIST_FILE = CarbonIntensityUKDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = uk.example.ExampleAwesomeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.example.CarbonIntensityUKDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E5C652A9256015E8007684B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CarbonIntensity/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = uk.example.CarbonIntensity;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E5C652AA256015E8007684B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CarbonIntensity/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = uk.example.CarbonIntensity;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -527,7 +702,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E5ABFA2A25333714008326B2 /* Build configuration list for PBXProject "ExampleAwesomeApp" */ = {
+		E5ABFA2A25333714008326B2 /* Build configuration list for PBXProject "CarbonIntensityUKDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E5ABFA4125333716008326B2 /* Debug */,
@@ -536,11 +711,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E5ABFA4325333716008326B2 /* Build configuration list for PBXNativeTarget "ExampleAwesomeApp" */ = {
+		E5ABFA4325333716008326B2 /* Build configuration list for PBXNativeTarget "CarbonIntensityUKDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E5ABFA4425333716008326B2 /* Debug */,
 				E5ABFA4525333716008326B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5C652A8256015E8007684B5 /* Build configuration list for PBXNativeTarget "CarbonIntensity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5C652A9256015E8007684B5 /* Debug */,
+				E5C652AA256015E8007684B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -559,7 +743,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E58971C2255FFBFD00343FB3 /* Alamofire */ = {
+		E59A0A64256029D70041835C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E58971C1255FFBFD00343FB3 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		E5C652D42560215E007684B5 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E58971C1255FFBFD00343FB3 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
