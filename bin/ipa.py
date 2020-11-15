@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+from dataclasses import dataclass
 from typing import List,Dict,Optional
 from functools import reduce
 from pathlib import Path
@@ -38,25 +39,27 @@ def formattedSize(size_in_mb: float) -> str:
 
 # Types
 
+@dataclass
 class CompressedFile(object):
-    def __init__(self, uncompressed_file_size: int, file_size: int, file_compression: float, file_name: str):
-        self.uncompressed_file_size = uncompressed_file_size
-        self.file_size = file_size
-        self.file_compression = file_compression
-        self.file_name = file_name
+    uncompressed_file_size: int
+    file_size: int
+    file_compression: float
+    file_name: str
 
-    def __repr__(self) -> str:
-        return f'CompressedFile(uncompressed_file_size={self.uncompressed_file_size}, file_size={self.file_size}, file_compression={self.file_compression}%, file_name={self.file_name})'
-        
+@dataclass        
 class Collection(object):
-    def __init__(self, name: str, total_archive_compressed_size: float, total_archive_uncompressed_size_in_mb: float):
-        self.name = name
-        self.total_archive_compressed_size = total_archive_compressed_size
-        self.total_archive_uncompressed_size_in_mb = total_archive_uncompressed_size_in_mb
-        self.files = list()
+    name: str
+    total_archive_compressed_size: float
+    total_archive_uncompressed_size_in_mb: float
+    files = []
 
     def __hash__(self):
       return hash((self.name))
+
+    def __dict__(self) -> dict:
+        return {
+            "dio": "ma"
+        }
 
     @property
     def size(self) -> 'Size':
@@ -294,17 +297,28 @@ def main():
         required=True,
         help='The path to xcfilelist file containing the list of names of libraries considered external to the project.'
     )
-
+    CLI.add_argument(
+        '--metrics-host',
+        metavar='E',
+        type=str,
+        required=False,
+        help='The host for the mobile metrics API.'
+    )
     
     args = CLI.parse_args()
     ipa_path = Path(args.ipa_path)
     external_frameworks_input_file_list = Path(args.external_frameworks_input_file_list)
+    metrics_host = args.metrics_host
 
     logging.basicConfig(level=logging.DEBUG)
 
     logging.debug('Start IPA size analysis ...')
 
     ipa_report = IPA(ipa_path=ipa_path, external_input_file_list=external_frameworks_input_file_list)
+
+    if metrics_host:
+        # TO IMPLEMENT
+        logging.debug(f'Storing metrics report for {ipa_report.name}')
 
     logging.debug('IPA size analysis terminated.')
 
