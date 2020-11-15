@@ -2,7 +2,7 @@
 
 from pathlib import Path
 from argparse import ArgumentParser
-import logging
+import json
 
 from ipa.report import IPA
 
@@ -37,19 +37,13 @@ def main():
     external_frameworks_input_file_list = Path(args.external_frameworks_input_file_list)
     metrics_host = args.metrics_host
 
-    logging.basicConfig(level=logging.DEBUG)
-
-    logging.debug('Start IPA size analysis ...')
-
     ipa_report = IPA(ipa_path=ipa_path, external_input_file_list=external_frameworks_input_file_list)
 
-    if metrics_host:
+    # if metrics_host:
         # TO IMPLEMENT
-        logging.debug(f'Storing metrics report for {ipa_report.name}')
 
-    ditto = ipa_report.__dict__
+    print(json.dumps(ipa_report.as_json, indent=4))
 
-    logging.debug('IPA size analysis terminated.')
 
 if __name__ == '__main__':
     main()

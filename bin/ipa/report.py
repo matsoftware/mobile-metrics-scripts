@@ -3,9 +3,9 @@
 from dataclasses import dataclass
 from typing import List,Dict,Optional
 from pathlib import Path
-import logging
 import re
 import subprocess
+from functools import reduce
 
 from .models.size import Size, toMB
 from .models.collection import Collection
@@ -16,7 +16,6 @@ from .models.file_list import FileList
 framework_name_pattern = r"([a-zA-Z]*?).framework"
 assets_car_pattern = r"Payload/.*.app/(Assets.car)$"
 executable_pattern = r"Payload/(.*).app/\1$"
-main_bundle_pattern = r"Payload/.*.app/([a-zA-Z]*?).bundle"
 file_extensions_to_analyze = [
     # Ext - Description
     ("png", "Raw images"),
@@ -34,7 +33,7 @@ def file_extension_pattern(extension: str) -> str:
     return f'(?i)[a-zA-Z]*?.({extension})$'
 
 
-# IPA Report
+# IPA Analysis
     
 class IPA(object):
     def __init__(self, ipa_path: Path, external_input_file_list: Path):
@@ -43,7 +42,6 @@ class IPA(object):
         self.name = ipa_path.name
         self.assets_car = {}
         self.executable = {}
-        self.main_bundle = {}
         self.files_ext = {}
         self.__analyze(ipa_path, self.__read_compressed_files__(ipa_path), FileList.read_input_file_lists(external_input_file_list))
 
@@ -63,10 +61,6 @@ class IPA(object):
         return list(self.executable.keys())[0]
 
     @property
-    def main_bundle_name(self) -> str:
-        return list(self.main_bundle.keys())[0]
-
-    @property
     def executable_size(self) -> 'Size':
         return self.executable[self.executable_name].size
 
@@ -74,9 +68,6 @@ class IPA(object):
     def asset_car_size(self) -> 'Size':
         return self.assets_car['Assets.car'].size
 
-    @property
-    def main_bundle_size(self) -> 'Size':
-        return self.main_bundle[self.main_bundle_name].size
 
     def file_ext_size(self, ext: str) -> 'Size':
         if ext in self.files_ext:
@@ -99,6 +90,25 @@ class IPA(object):
             total_archive_uncompressed_size_in_mb=size_of_known_files.total_archive_uncompressed_size_in_mb
         )
 
+    # Export
+
+    @property
+    def as_json(self) -> Dict:
+        internal_frameworks_table = Collection.export_collections(self.internal_frameworks)
+        external_frameworks_table = Collection.export_collections(self.external_frameworks)
+        file_ext_table = dict([(f"{ext[1]} (*.{ext[0]})", self.file_ext_size(ext[0]).as_dict) for ext in file_extensions_to_analyze])
+        return {
+                "ipa": self.name,
+                "total_universal_IPA_size_in_mb": self.size,
+                "total_uncompressed_app_size_in_mb": self.uncompressed_size,
+                "external_frameworks": external_frameworks_table,
+                "internal_frameworks": internal_frameworks_table,
+                "Asset.car": self.asset_car_size.as_dict,
+                "executable_name": self.executable_name,
+                "main_executable_size": self.executable_size.as_dict,
+                "extensions": file_ext_table
+        }
+
     # Analysis methods
 
     @staticmethod
@@ -107,25 +117,24 @@ class IPA(object):
         raw_compressed_files = [f.split() for f in zip_content]
         total = raw_compressed_files[-1]
         total_size = CompressedFile(
-            uncompressed_file_size=int(total[0]),
-            file_size=int(total[1]), 
+            uncompressed_file_size=toMB(int(total[0])),
+            file_size=toMB(int(total[1])), 
             file_compression=float(total[2][:-1]), 
             file_name='Total'
         )
         return [CompressedFile(
-            uncompressed_file_size=int(f[0]),
-            file_size=int(f[2]), 
+            uncompressed_file_size=toMB(int(f[0])),
+            file_size=toMB(int(f[2])), 
             file_compression=float(f[3][:-1]), 
             file_name=f[7]
         ) for f in raw_compressed_files[0:-2] if f[0] != "0"] + [ total_size ]
 
     def __analyze(self, ipa_path: Path, compressed_files: List['CompressedFile'], external_framework_names: List[str]) -> List['Framework']:
-        logging.debug(f'{ipa_path}')
         frameworks = {}
 
         # Global size analysis from latest element in unzip -v result
-        self.size = toMB(compressed_files[-1].file_size)
-        self.uncompressed_size = toMB(compressed_files[-1].uncompressed_file_size)
+        self.size = compressed_files[-1].file_size
+        self.uncompressed_size = compressed_files[-1].uncompressed_file_size
 
         # To group stats around files that follow a specific pattern, please add the 
         # tuple of `dictionary` and `regex pattern` to the list below
@@ -134,7 +143,6 @@ class IPA(object):
             (frameworks, framework_name_pattern), # Framework
             (self.assets_car, assets_car_pattern), # Root Assets.car
             (self.executable, executable_pattern), # Main executable
-            (self.main_bundle, main_bundle_pattern), # Main bundle
         ] + [(self.files_ext, file_extension_pattern(ext[0])) for ext in file_extensions_to_analyze]
 
         for compressed_file in compressed_files:
@@ -159,9 +167,11 @@ class IPA(object):
                     group[match_name] = Collection(
                         name=match_name,
                         total_archive_compressed_size=total_archive_size,
-                        total_archive_uncompressed_size_in_mb=total_archive_uncompressed_size
+                        total_archive_uncompressed_size_in_mb=total_archive_uncompressed_size,
+                        files=[]
                     ) 
-                group[match_name].files.append(compressed_file)
+                collection = group.get(match_name)
+                collection.files.append(compressed_file)
 
     def __classify_frameworks(self, frameworks: Dict[str, 'Collection'], external_framework_names: List[str]):
         self.internal_frameworks = []

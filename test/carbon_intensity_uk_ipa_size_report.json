@@ -1,0 +1,99 @@
+{
+    "ipa": "CarbonIntensityUKDemo.ipa",
+    "total_universal_IPA_size_in_mb": 6.610536575317383,
+    "total_uncompressed_app_size_in_mb": 10.249349594116211,
+    "external_frameworks": [
+        {
+            "name": "Alamofire",
+            "compressed_size_in_mb": 0.9455356597900391,
+            "relative_compressed_size": 0.14303463100416206,
+            "uncompressed_size_in_mb": 3.7541399002075195,
+            "relative_uncompressed_size": 0.3662807933064005
+        }
+    ],
+    "internal_frameworks": [
+        {
+            "name": "DataProvider",
+            "compressed_size_in_mb": 2.8196182250976562,
+            "relative_compressed_size": 0.4265339421349895,
+            "uncompressed_size_in_mb": 3.1801586151123047,
+            "relative_uncompressed_size": 0.3102790656041161
+        },
+        {
+            "name": "CarbonIntensity",
+            "compressed_size_in_mb": 0.04619121551513672,
+            "relative_compressed_size": 0.006987513795416676,
+            "uncompressed_size_in_mb": 0.22989654541015625,
+            "relative_uncompressed_size": 0.02243035456046223
+        }
+    ],
+    "Asset.car": {
+        "compressed_size_in_mb": 2.7779836654663086,
+        "relative_compressed_size": 0.42023573030952227,
+        "uncompressed_size_in_mb": 2.9499435424804688,
+        "relative_uncompressed_size": 0.2878176332451307
+    },
+    "executable_name": "CarbonIntensityUKDemo",
+    "main_executable_size": {
+        "compressed_size_in_mb": 0.017477035522460938,
+        "relative_compressed_size": 0.0026438149646909465,
+        "uncompressed_size_in_mb": 0.1259765625,
+        "relative_uncompressed_size": 0.012291176268620859
+    },
+    "extensions": {
+        "Raw images (*.png)": {
+            "compressed_size_in_mb": 0,
+            "relative_compressed_size": 0.0,
+            "uncompressed_size_in_mb": 0,
+            "relative_uncompressed_size": 0.0
+        },
+        "Compressed assets (*.car)": {
+            "compressed_size_in_mb": 5.555967330932617,
+            "relative_compressed_size": 0.8404714606190445,
+            "uncompressed_size_in_mb": 5.8998870849609375,
+            "relative_uncompressed_size": 0.5756352664902614
+        },
+        "Raw images (*.jpg)": {
+            "compressed_size_in_mb": 0,
+            "relative_compressed_size": 0.0,
+            "uncompressed_size_in_mb": 0,
+            "relative_uncompressed_size": 0.0
+        },
+        "Raw assets (*.pdf)": {
+            "compressed_size_in_mb": 0,
+            "relative_compressed_size": 0.0,
+            "uncompressed_size_in_mb": 0,
+            "relative_uncompressed_size": 0.0
+        },
+        "Deprecated interfaces (*.nib)": {
+            "compressed_size_in_mb": 0.001277923583984375,
+            "relative_compressed_size": 0.00019331616570369248,
+            "uncompressed_size_in_mb": 0.0019960403442382812,
+            "relative_uncompressed_size": 0.00019474800092526235
+        },
+        "Deprecated interfaces (*.storyboardc)": {
+            "compressed_size_in_mb": 0,
+            "relative_compressed_size": 0.0,
+            "uncompressed_size_in_mb": 0,
+            "relative_uncompressed_size": 0.0
+        },
+        "Web content (*.css)": {
+            "compressed_size_in_mb": 0,
+            "relative_compressed_size": 0.0,
+            "uncompressed_size_in_mb": 0,
+            "relative_uncompressed_size": 0.0
+        },
+        "Web content (*.html)": {
+            "compressed_size_in_mb": 0,
+            "relative_compressed_size": 0.0,
+            "uncompressed_size_in_mb": 0,
+            "relative_uncompressed_size": 0.0
+        },
+        "Web content (*.js)": {
+            "compressed_size_in_mb": 0,
+            "relative_compressed_size": 0.0,
+            "uncompressed_size_in_mb": 0,
+            "relative_uncompressed_size": 0.0
+        }
+    }
+}
