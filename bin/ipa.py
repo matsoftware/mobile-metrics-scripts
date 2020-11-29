@@ -9,7 +9,7 @@ from ipa.report import IPA
 # MAIN
 
 def main():
-    CLI = ArgumentParser(description='Analysis of the ')
+    CLI = ArgumentParser(description='Analysis of the size of an IPA file')
     CLI.add_argument(
         '--ipa-path',
         metavar='A',
@@ -24,23 +24,12 @@ def main():
         required=True,
         help='The path to xcfilelist file containing the list of names of libraries considered external to the project.'
     )
-    CLI.add_argument(
-        '--metrics-host',
-        metavar='E',
-        type=str,
-        required=False,
-        help='The host for the mobile metrics API.'
-    )
     
     args = CLI.parse_args()
     ipa_path = Path(args.ipa_path)
     external_frameworks_input_file_list = Path(args.external_frameworks_input_file_list)
-    metrics_host = args.metrics_host
 
     ipa_report = IPA(ipa_path=ipa_path, external_input_file_list=external_frameworks_input_file_list)
-
-    # if metrics_host:
-        # TO IMPLEMENT
 
     print(json.dumps(ipa_report.as_json, indent=4))
 
